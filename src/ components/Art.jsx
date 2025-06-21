@@ -1,72 +1,67 @@
-import gsap from 'gsap';
-import { useMediaQuery } from 'react-responsive'
 import { useGSAP } from '@gsap/react'
-import { featureLists, goodLists } from '../../constants/index.js'
+import gsap from 'gsap';
+import { cocktailLists, mockTailLists } from '../../constants/index.js'
 
-const Art = () => {
-    const isMobile = useMediaQuery({ maxWidth: 767 });
-
+const Cocktails = () => {
     useGSAP(() => {
-        const start = isMobile ? 'top 20%' : 'top top';
-
-        const maskTimeline = gsap.timeline({
+        const parallaxTimeline = gsap.timeline({
             scrollTrigger: {
-                trigger: '#art',
-                start,
-                end: 'bottom center',
-                scrub: 1.5,
-                pin: true
+                trigger: '#cocktails',
+                start: 'top 30%',
+                end: 'bottom 80%',
+                scrub: true,
             }
         })
 
-        maskTimeline
-            .to('.will-fade', { opacity: 0, stagger: 0.2, ease: 'power1.inOut', })
-            .to('.masked-img', { scale: 1.3, maskPosition: 'center', maskSize: '400%', duration: 1, ease: 'power1.inOut '})
-            .to('#masked-content', { opacity: 1, duration: 1, ease: 'power1.inOut'})
+        parallaxTimeline
+            .from('#c-left-leaf', {
+                x: -100, y: 100
+            })
+            .from('#c-right-leaf', {
+                x: 100, y: 100
+            })
     })
 
     return (
-        <div id="work">
-            <div className="container mx-auto h-full pt-20">
-                <h2 className="will-fade">The ART</h2>
+        <section id="cocktails" className="noisy">
+            <img src="/images/cocktail-left-leaf.png" alt="l-leaf" id="c-left-leaf" />
+            <img src="/images/cocktail-right-leaf.png" alt="r-leaf" id="c-right-leaf" />
 
-                <div className="content">
-                    <ul className="space-y-4 will-fade">
-                        {goodLists.map((feature, index) => (
-                            <li key={index} className="flex items-center gap-2">
-                                <img src="/images/check.png" alt="check" />
-                                <p>{feature}</p>
-                            </li>
-                        ))}
-                    </ul>
+            <div className="list">
+                <div className="popular">
+                    <h2>Most popular cocktails:</h2>
 
-                    <div className="cocktail-img">
-                        <img
-                            src="/images/under-img.jpg"
-                            alt="cocktail"
-                            className="abs-center masked-img size-full object-contain"
-                        />
-                    </div>
-
-                    <ul className="space-y-4 will-fade">
-                        {featureLists.map((feature, index) => (
-                            <li key={index} className="flex items-center justify-start gap-2">
-                                <img src="/images/check.png" alt="check" />
-                                <p className="md:w-fit w-60">{feature}</p>
+                    <ul>
+                        {cocktailLists.map(({ name, country, detail, price }) => (
+                            <li key={name}>
+                                <div className="md:me-28">
+                                    <h3>{name}</h3>
+                                    <p>{country} | {detail}</p>
+                                </div>
+                                <span>- {price}</span>
                             </li>
                         ))}
                     </ul>
                 </div>
 
-                <div className="masked-container">
-                    <h2 className="will-fade">Sip-Worthy Perfection</h2>
-                    <div id="masked-content">
-                        <h3>Made with Craft, Poured with Passion</h3>
-                        <p>This isn’t just a drink. It’s a carefully crafted moment made just for you.</p>
-                    </div>
+                <div className="loved">
+                    <h2>Most loved mocktails:</h2>
+
+                    <ul>
+                        {mockTailLists.map(({ name, country, detail, price }) => (
+                            <li key={name}>
+                                <div className="me-28">
+                                    <h3>{name}</h3>
+                                    <p>{country} | {detail}</p>
+                                </div>
+                                <span>- {price}</span>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
-        </div>
+        </section>
     )
 }
-export default Art
+
+export default Cocktails

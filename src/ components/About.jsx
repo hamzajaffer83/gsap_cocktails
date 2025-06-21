@@ -1,6 +1,6 @@
-import { useGSAP } from "@gsap/react";
-import { SplitText } from "gsap/all";
 import gsap from 'gsap';
+import { SplitText} from 'gsap/all'
+import { useGSAP } from '@gsap/react'
 
 const About = () => {
     useGSAP(() => {
@@ -11,7 +11,7 @@ const About = () => {
         const scrollTimeline = gsap.timeline({
             scrollTrigger: {
                 trigger: '#about',
-                start: 'top center',
+                start: 'top center'
             }
         })
 
@@ -31,21 +31,23 @@ const About = () => {
                     <div className="md:col-span-8">
                         <p className="badge">Best Cocktails</p>
                         <h2>
-                            Where every details matters <span className="text-white">-</span>
+                            Where every detail matters <span className="text-white">-</span>
                             from muddle to garnish
                         </h2>
                     </div>
 
                     <div className="sub-content">
                         <p>
-                            Every cocktail we serve is a reflection of our obsession with detail - from the first muddle to the final garnish.
-                            That care is what turns a simple drink into something truly memorable.
+                            Every cocktail we serve is a reflection of our obsession with detail — from the first muddle to the final garnish. That care is what turns a simple drink into something truly memorable.
                         </p>
+
                         <div>
                             <p className="md:text-3xl text-xl font-bold">
                                 <span>4.5</span>/5
                             </p>
-                            <p className="text-sm text-white-100">More that +12000 customers</p>
+                            <p className="text-sm text-white-100">
+                                More than +12000 customers
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -53,28 +55,29 @@ const About = () => {
 
             <div className="top-grid">
                 <div className="md:col-span-3">
-                    <div className="noisy"/>
+                    <div  className="noisy" />
                     <img src="/images/abt1.png" alt="grid-img-1" />
                 </div>
 
                 <div className="md:col-span-6">
-                    <div className="noisy"/>
+                    <div  className="noisy" />
                     <img src="/images/abt2.png" alt="grid-img-2" />
                 </div>
 
                 <div className="md:col-span-3">
-                    <div className="noisy"/>
+                    <div  className="noisy" />
                     <img src="/images/abt5.png" alt="grid-img-5" />
                 </div>
             </div>
+
             <div className="bottom-grid">
                 <div className="md:col-span-8">
-                    <div className="noisy"/>
+                    <div  className="noisy" />
                     <img src="/images/abt3.png" alt="grid-img-3" />
                 </div>
 
                 <div className="md:col-span-4">
-                    <div className="noisy"/>
+                    <div  className="noisy" />
                     <img src="/images/abt4.png" alt="grid-img-4" />
                 </div>
             </div>
@@ -82,5 +85,4 @@ const About = () => {
         </div>
     )
 }
-
-export default About;
+export default About
