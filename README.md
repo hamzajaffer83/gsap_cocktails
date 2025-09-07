@@ -1,12 +1,22 @@
-# React + Vite
+# 🍸 Cocktail Store Landing Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern and animated **landing page for a cocktail store / wine café**.  
+Built with **React 19, GSAP, TailwindCSS, and Vite**, this project showcases smooth animations, responsive layouts, and a clean, professional UI.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
+- 🎬 **GSAP Animations** – Smooth transitions and motion effects
+- 📱 **Responsive Design** – Optimized for mobile, tablet, and desktop
+- 🎨 **Modern UI** – TailwindCSS styling with a minimal and elegant theme
+- ⚡ **Vite-Powered** – Fast development and optimized builds
+- 🍷 **Cocktail Theme** – Perfect for restaurants, cafés, and drink brands
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠 Tech Stack
+- **Framework:** [React 19](https://react.dev/)
+- **Animations:** [GSAP](https://gsap.com/) + `@gsap/react`
+- **Styling:** [TailwindCSS 4](https://tailwindcss.com/)
+- **Responsive Layout:** [react-responsive](https://www.npmjs.com/package/react-responsive)
+- **Build Tool:** [Vite](https://vitejs.dev/)
